@@ -3,6 +3,11 @@
 #include <string>
 
 int main(int argc, char *argv[]) {
+  // TODO: Make loop for multiple calculations
+  // TODO: Consider adding argument parser
+
+  /*
+    *
   std::cout
       << "Enter substance to calculate heat for from the following list\n";
   for (auto i : substances) {
@@ -29,6 +34,7 @@ int main(int argc, char *argv[]) {
   heatCalc hCalc = heatCalc(fluidChoice, phaseChoice);
   double heatResult = hCalc.calcSpecificHeat(dTemp, mass, phaseChoice);
   std::cout << "Your heat result is: " << heatResult;
+    */
 
   return 0;
 }
