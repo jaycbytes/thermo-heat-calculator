@@ -1,3 +1,4 @@
+#include "config.h"
 #include "heatCalculator.h"
 #include <iostream>
 #include <string>
@@ -6,6 +7,13 @@ int main(int argc, char *argv[]) {
   // TODO: Make loop for multiple calculations
   // TODO: Consider adding argument parser
 
+  // create or load config. Constructor should be all needed, extra
+  // parameterized one just in case
+  config heatConfig = config();
+
+  // start calculator loop
+
+  // exit and save config
   /*
     *
   std::cout

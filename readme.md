@@ -16,3 +16,8 @@ be taken into account
 | steam | 2.00|
 | solid | 2.11|
 | caca | 69420 |
+
+## Configuration
+
+A simple "config.ini" file is used to set the various options
+listed below. This file can be found in the "~/.config/thermo-calc/" folder.
