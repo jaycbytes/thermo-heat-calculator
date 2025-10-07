@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-/* How will the class be used?
+/* How will the classhUnits s be usshUnits ed?
  * heatCalc() object will be created for each type of material
    TODO : map with objects make it const
  * TODO: Figure out how to store constants, consider that you don't want to have
@@ -23,6 +23,18 @@ public:
   // constants to use
   heatCalc(config &configuration) : userConf{configuration} {};
 
+  enum class configChangeType {
+    CHANGE_SPEC_HEAT,
+    CHANGE_LATENT_HEAT,
+    CHANGE_ENERGY
+  };
+
+  void changeSpecHUnits(config &configuration, configChangeType typeOfChange,
+                        config::specificHCUnits specHUnits);
+  void changeLatentHUnits(config &configuration, configChangeType typeOfChange,
+                          config::latentHUnits latentHUnits);
+  void changeEnergyUnits(config &configuration, configChangeType typeOfChange,
+                         config::energyUnits energyUnits);
   void saveCustomConfig();
 
   // Get list of constants that will be used for these calculations
