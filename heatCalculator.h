@@ -1,3 +1,4 @@
+#include "config.h"
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -19,7 +20,7 @@ public:
   // Constructor is a function called at initialization of class
   // must have fluid type, no point of a heatCalc that doesn't know what
   // constants to use
-  heatCalc(std::string &fluid, std::string &phase) : substanceType{fluid} {};
+  heatCalc(config &configuration) : userConf{configuration} {};
 
   // Get list of constants that will be used for these calculations
   std::string constantsUsed();
@@ -28,7 +29,13 @@ public:
 
   double calcLatentHeat(double mass);
 
+  void runCalc();
+
 private:
+  // store copy of the one config object for the calc
+  config &userConf;
   // what context does this calc need?
   std::string substanceType;
+  std::string phase;
+  double mass;
 };

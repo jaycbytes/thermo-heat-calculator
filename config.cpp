@@ -1,20 +1,20 @@
 #include "config.h"
 
-const std::unordered_map<config::units, const char *> config::unitMap = {
+const std::unordered_map<config::units, std::string> config::unitMap = {
     // Specific Heat Capacity
-    {J_PER_G_C, "J/(g·°C)"},
-    {J_PER_KG_C, "J/(kg·°C)"},
-    {KJ_PER_KG_C, "kJ/(kg·°C)"},
-    {CAL_PER_G_C, "cal/(g·°C)"},
+    {config::units::J_PER_G_C, "J/(g·°C)"},
+    {config::units::J_PER_KG_C, "J/(kg·°C)"},
+    {config::units::KJ_PER_KG_C, "kJ/(kg·°C)"},
+    {config::units::CAL_PER_G_C, "cal/(g·°C)"},
 
     // Latent Heat
-    {J_PER_G, "J/g"},
-    {KJ_PER_G, "kJ/g"},
-    {J_PER_KG, "J/kg"},
-    {KJ_PER_KG, "kJ/kg"},
-    {CAL_PER_G, "cal/g"},
+    {config::units::J_PER_G, "J/g"},
+    {config::units::KJ_PER_G, "kJ/g"},
+    {config::units::J_PER_KG, "J/kg"},
+    {config::units::KJ_PER_KG, "kJ/kg"},
+    {config::units::CAL_PER_G, "cal/g"},
 
     // Energy
-    {JOULES, "J"},
-    {KILOJOULES, "kJ"},
-    {CALORIES, "cal"}};
+    {config::units::JOULES, "J"},
+    {config::units::KILOJOULES, "kJ"},
+    {config::units::CALORIES, "cal"}};
