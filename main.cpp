@@ -1,7 +1,4 @@
-#include "config.h"
 #include "heatCalculator.h"
-#include <iostream>
-#include <string>
 
 int main(int argc, char *argv[]) {
   // TODO: Make loop for multiple calculations

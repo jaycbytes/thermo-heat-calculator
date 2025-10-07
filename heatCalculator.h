@@ -9,18 +9,21 @@
  * the ununsed constants in memory if not required.
  */
 
-using thermalMap = std::unordered_map<std::string, double>;
-
 const std::vector<std::string> substances = {"h2o"};
+
+using thermalMap = std::unordered_map<std::string, double>;
 const thermalMap waterConstants = {
     {"liquid", 4.18}, {"vapor", 2.00}, {"solid", 2.11}};
 
+// Main calculator class required to start application
 class heatCalc {
 public:
   // Constructor is a function called at initialization of class
   // must have fluid type, no point of a heatCalc that doesn't know what
   // constants to use
   heatCalc(config &configuration) : userConf{configuration} {};
+
+  void saveCustomConfig();
 
   // Get list of constants that will be used for these calculations
   std::string constantsUsed();
