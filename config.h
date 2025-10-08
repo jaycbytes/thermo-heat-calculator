@@ -36,8 +36,11 @@ public:
     CALORIES
   };
 
-  void makeUserConfig();
-  void loadConfig();
+  // Set units
+
+  bool setSpecificHUnits(specificHCUnits units);
+  bool setLatentUnits(latentHUnits units);
+  bool setEnergyUnits(energyUnits units);
 
   std::string DEFAULT_CONFIG_LOCATION =
       "/Users/jabooty/.config/thermo-calc/config.ini";

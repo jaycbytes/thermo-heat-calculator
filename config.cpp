@@ -23,3 +23,33 @@ const std::unordered_map<config::energyUnits, std::string> energyMap = {
     {config::energyUnits::JOULES, "J"},
     {config::energyUnits::KILOJOULES, "kJ"},
     {config::energyUnits::CALORIES, "cal"}};
+
+bool config::setSpecificHUnits(config::specificHCUnits units) {
+  auto it = specificHeatMap.find(units);
+  if (it != specificHeatMap.end()) {
+    specific_heat_unit = it->second;
+    return true;
+  } else {
+    return false;
+  }
+};
+
+bool config::setLatentUnits(config::latentHUnits units) {
+  auto it = latentHeatMap.find(units);
+  if (it != latentHeatMap.end()) {
+    latent_heat_unit = it->second;
+    return true;
+  } else {
+    return false;
+  }
+};
+bool config::setEnergyUnits(config::energyUnits units) {
+
+  auto it = energyMap.find(units);
+  if (it != energyMap.end()) {
+    energy_unit = it->second;
+    return true;
+  } else {
+    return false;
+  }
+};
