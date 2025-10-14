@@ -17,6 +17,12 @@ public:
 
   enum class UnitChange { CHANGE_SPEC_HEAT, CHANGE_LATENT_HEAT, CHANGE_ENERGY };
 
+  enum class latentPhase { FUSION, VAPORIZATION };
+
+  const std::unordered_map<latentPhase, double> latentConstants = {
+      {heatCalc::latentPhase::FUSION, 3.34e5},
+      {heatCalc::latentPhase::VAPORIZATION, 2.26e6}};
+
   // Form Response
   // TODO: Finish making templatel for all calculation responses
   std::string response();
@@ -25,7 +31,7 @@ public:
 
   double calcSpecificHeat(double deltaTemp, double mass, std::string &phase);
 
-  double calcLatentHeat(double mass);
+  double calcLatentHeat(double mass, latentPhase phaseType);
 
 private:
   // store copy of the one config object for the calc

@@ -13,3 +13,16 @@ double heatCalc::calcSpecificHeat(double deltaTemp, double mass,
     return 0.0;
   }
 };
+
+double heatCalc::calcLatentHeat(double mass, heatCalc::latentPhase phaseType) {
+  // get latent heat value
+  auto it = latentConstants.find(phaseType);
+  if (it != latentConstants.end()) {
+    double phaseConstant = it->second;
+    return mass * phaseConstant;
+  } else {
+    std::cout
+        << "Error: Latent constant for water at that phase wasn't found\n";
+    return 0.0;
+  }
+};

@@ -1,6 +1,27 @@
-# .gitignore
+# Build directories
+CMakeFiles/
 build/
+out/
+
+# CMake files
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Executables
+heat_calc
 *.exe
 *.out
-heat-calc
-cmake-build-*/
+
+# Object files and libraries
+*.o
+*.a
+*.so
+*.dylib
+
+# IDE files (if applicable)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
