@@ -49,9 +49,9 @@ public:
   std::string DEFUALT_PHASE = "solid";
   std::string DEFAULT_SUBSTANCE = "h2o";
   // units used during runtime, strings b/c they'll be printed in terminal.
-  std::string specific_heat_unit;
-  std::string latent_heat_unit;
-  std::string energy_unit;
+  std::string specific_heat_unit = "J/(g·°C)";
+  std::string latent_heat_unit = "J/g";
+  std::string energy_unit = "J";
 
 private:
   static const std::unordered_map<specificHCUnits, std::string> specificHeatMap;

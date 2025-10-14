@@ -19,9 +19,13 @@ public:
 
   enum class latentPhase { FUSION, VAPORIZATION };
 
-  const std::unordered_map<latentPhase, double> latentConstants = {
-      {heatCalc::latentPhase::FUSION, 3.34e5},
-      {heatCalc::latentPhase::VAPORIZATION, 2.26e6}};
+  enum class Mode {
+    CALCULATE,
+    SETTINGS,
+  };
+
+  const std::unordered_map<std::string, double> latentConstants = {
+      {"fusion", 3.34e5}, {"vaporization", 2.26e6}};
 
   // Form Response
   // TODO: Finish making templatel for all calculation responses
@@ -31,12 +35,16 @@ public:
 
   double calcSpecificHeat(double deltaTemp, double mass, std::string &phase);
 
-  double calcLatentHeat(double mass, latentPhase phaseType);
+  double calcLatentHeat(double mass, std::string &phase);
+
+  void Run();
 
 private:
   // store copy of the one config object for the calc
   config &userConf;
 
+  void specificHeatMode();
+  void latentHeatMode();
   // what context does this calc need?
 
   std::string substanceType;
