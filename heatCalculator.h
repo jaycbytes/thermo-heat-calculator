@@ -1,13 +1,10 @@
 #include "config.h"
+#include <array>
 #include <string>
 #include <unordered_map>
 #include <vector>
 
-const std::vector<std::string> substances = {"h2o"};
-
 using thermalMap = std::unordered_map<std::string, double>;
-const thermalMap waterConstants = {
-    {"liquid", 4.18}, {"vapor", 2.00}, {"solid", 2.11}};
 
 // Calculator object that should contain all the info it needs, functions
 // that would be useful to user during main() cli portion.
@@ -23,6 +20,14 @@ public:
     CALCULATE,
     SETTINGS,
   };
+
+  const std::array<std::string, 4> options{
+      "s - specific heat", "l - latent heat", "h - history", "q - quit"};
+
+  const std::vector<std::string> substances = {"h2o"};
+
+  const thermalMap waterConstants = {
+      {"liquid", 4.18}, {"vapor", 2.00}, {"solid", 2.11}};
 
   const std::unordered_map<std::string, double> latentConstants = {
       {"fusion", 3.34e5}, {"vaporization", 2.26e6}};
@@ -42,6 +47,12 @@ public:
 private:
   // store copy of the one config object for the calc
   config &userConf;
+
+  // utilities
+  double getQuantity();
+
+  // print list of options
+  void printOptions();
 
   void specificHeatMode();
   void latentHeatMode();

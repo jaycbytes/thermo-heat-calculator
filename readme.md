@@ -34,3 +34,13 @@ be taken into account
 
 A simple "config.ini" file is used to set the various options
 listed below. This file can be found in the "~/.config/thermo-calc/" folder.
+
+
+
+## Things I learned
+Enum class is a safer approach to enum's that avoid naming conflicts.
+Input sanitation is bet with getline() and sstream's. Instead of having
+std::cin fail, that can be handled in a sstream.
+
+
+
